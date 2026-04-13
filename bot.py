@@ -120,7 +120,7 @@ async def unmute_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # 🔹 تشغيل البوت
 app = ApplicationBuilder().token(TOKEN).build()
 
-app.add_handler(MessageHandler(filters.TEXT, moderate))
+app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, moderate))
 app.add_handler(CommandHandler("warnings", warnings_cmd))
 app.add_handler(CommandHandler("reset", reset_cmd))
 app.add_handler(CommandHandler("unmute", unmute_cmd))
