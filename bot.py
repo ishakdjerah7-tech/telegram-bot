@@ -1,8 +1,8 @@
 import json
 from telegram import Update, ChatPermissions
 from telegram.ext import ApplicationBuilder, MessageHandler, CommandHandler, filters, ContextTypes
-
-TOKEN = "8752868926:AAEiWwQgjc12fVK-wOMiMg-RjhHpFb38usE "
+import os
+TOKEN = os.getenv("TOKEN")
 
 bad_words = ["زب","نيك","قعك","بزازل","نكمك","قحبة","نيكمك"]
 
