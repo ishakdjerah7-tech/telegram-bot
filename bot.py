@@ -43,7 +43,10 @@ async def moderate(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # فحص الكلام
     if any(word in text for word in bad_words):
 
-        await message.delete()
+        try:
+            await message.delete()
+        except:
+            pass
 
         user_id = str(user.id)
         warnings[user_id] = warnings.get(user_id, 0) + 1
